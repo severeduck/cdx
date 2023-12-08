@@ -1,0 +1,27 @@
+
+lexer.rs
+- Handles lexical analysis, breaking down the source code into tokens.
+
+parser.rs
+- Parses tokens into an Abstract Syntax Tree (AST), adhering to the language's syntax rules.
+
+ast.rs
+- Defines the structure and types of nodes in the AST.
+
+semantic_analyzer.rs
+- Performs semantic analysis to ensure code validity beyond syntax.
+
+codegen.rs
+- Responsible for generating target machine code or an intermediate representation from the AST.
+
+optimizer.rs
+- Optimizes the generated code for performance and efficiency.
+
+symbol_table.rs
+- Manages a symbol table to keep track of identifiers and their attributes.
+
+error.rs
+- Dedicated to handling and reporting compilation errors.
+
+main.rs
+- The main entry point of the compiler, coordinating the compilation process.
