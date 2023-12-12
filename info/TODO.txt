@@ -2,7 +2,23 @@
 
 [] Lexer (Lexical Analyzer): Breaks down the source code into tokens.
 
-[] Parser (Syntax Analyzer): Constructs a syntax tree from the tokens, checking the syntactic structure.
+[] Parser (Syntax Analyzer): Constructs a syntax tree from the tokens,
+    checking the syntactic structure.
+
+    [] Lambda Expressions: Create methods to parse lambda expressions, 
+        which are anonymous functions. 
+    This involves recognizing the lambda keyword or syntax (e.g., |args| body), 
+        parsing the arguments, and the body expression.
+
+    [] Function Definitions: Define a method for parsing named function definitions.
+    This should include parsing 
+        the function name, parameters, return type, and the body.
+
+    [] Higher-Order Functions: 
+    Extend the parser to handle functions 
+        that take other functions 
+        as parameters or return them. 
+    This will involve parsing the type signatures and body of functions accordingly.
 
 [] Semantic Analyzer: Validates semantic consistency, like type checking and variable usage.
 
