@@ -20,14 +20,28 @@
         as parameters or return them. 
     This will involve parsing the type signatures and body of functions accordingly.
 
-[] Semantic Analyzer: Validates semantic consistency, like type checking and variable usage.
+[] Semantic Analyzer: Validates semantic consistency, 
+    like type checking and variable usage.
 
-[] Intermediate Code Generator: Transforms the syntax tree into an intermediate code.
+    [] Overloading: having multiple functions 
+        with the same name but different parameters; 
 
-[] Optimizer: Improves the intermediate code for performance without altering its functionality.
+[] Intermediate Code Generator: 
+Transforms the syntax tree 
+    into an intermediate code.
 
-[] Code Generator: Converts the optimized intermediate code into target machine code.
+[] Optimizer: 
+Improves the intermediate code for performance 
+    without altering its functionality.
 
-[] Symbol Table: Stores information about identifiers (like variables, functions).
+[] Code Generator: 
+Converts the optimized intermediate code 
+    into target machine code.
 
-[] Error Handler: Manages and reports errors throughout all stages.
+[] Symbol Table: 
+Stores information about identifiers 
+    (like variables, functions).
+
+[] Error Handler: 
+Manages and reports errors 
+    throughout all stages.
