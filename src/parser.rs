@@ -22,8 +22,28 @@ impl Parser {
     }
 
     pub fn parse(&mut self) -> Result<AstNode, String> {
-        // Entry point for parsing
-        // Implement parsing logic here based on your language's grammar
+        // Assuming the top-level structure of your language is an expression
+        // or a series of expressions. You may need to adjust this logic based
+        // on your language's syntax and grammar.
+
+        let mut ast_nodes = Vec::new();
+
+        while self.current_token.is_some() {
+            let node = self.parse_expression()?;
+            ast_nodes.push(node);
+
+            // Depending on your language, you might have a delimiter like ';' 
+            // between statements or expressions at the top level.
+            // If so, consume it here. If not, remove this part.
+            if matches!(self.current_token, Some(Token { token_type: TokenType::Semicolon, .. })) {
+                self.next_token();
+            }
+        }
+
+        // For simplicity, let's assume the top-level structure is a single node.
+        // If your language allows multiple top-level nodes (like multiple statements or expressions),
+        // you might want to return a different kind of AstNode (e.g., AstNode::Program) that contains all nodes.
+        ast_nodes.into_iter().next().ok_or_else(|| "No valid expressions found".to_string())
     }
 
     fn parse_lambda_expression(&mut self) -> Result<AstNode, String> {

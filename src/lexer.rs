@@ -12,7 +12,7 @@ pub enum TokenType {
 
 // Token struct
 #[derive(Debug, Clone)]
-struct Token {
+pub struct Token {
     token_type: TokenType,
     value: String,
 }
@@ -58,6 +58,23 @@ impl Lexer {
         tokens.sort_by_key(|token| self.source_code.find(&token.value).unwrap());
 
         tokens
+    }
+
+    pub fn next_token(&mut self) -> Option<Token> {
+        // Logic to move to the next token
+        // This is a simplistic example; you'll need to adapt it to your lexer's logic
+        // For example:
+        if let Some(token) = self.token_patterns.iter().find_map(|(type, pattern)| {
+            pattern.find(&self.source_code).map(|mat| Token {
+                token_type: type.clone(),
+               value: mat.as_str().to_string(),
+           })
+        }) {
+            self.source_code = self.source_code[token.value.len()..].to_string(); // Update the remaining source code
+               Some(token)
+        } else {
+            None // No more tokens
+        }
     }
 }
 

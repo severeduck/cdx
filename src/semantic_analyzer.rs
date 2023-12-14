@@ -1,5 +1,5 @@
 use crate::ast::{AstNode};
-use crate::lexer::{Token, TokenType};
+use crate::lexer::{Token};
 use crate::error::{YourErrorType};
 
 
