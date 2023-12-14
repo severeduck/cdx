@@ -1,14 +1,13 @@
 use regex::Regex;
 use std::collections::HashMap;
 
-// Define token types
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]
 pub enum TokenType {
     Keyword,
     Identifier,
     Literal,
     Operator,
-    // ... add other token types as needed
+    Number,
 }
 
 // Token struct

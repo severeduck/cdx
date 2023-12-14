@@ -126,14 +126,14 @@ impl Parser {
     }
 }
 
-// Define the AstNode variants for lambda expressions
+#[derive(Debug)] // Add this line
 enum AstNode {
-    // ... existing variants ...
     LambdaExpression {
         parameters: Vec<Parameter>,
         body: Box<AstNode>,
     },
-    // ... other variants ...
+    NumberLiteral(f64),
+    Variable(String),
 }
 
 // Assume a `Parameter` struct is defined elsewhere
@@ -143,9 +143,9 @@ struct Parameter {
     // ... any additional fields ...
 }
 
-// Assume a `Type` enum is defined elsewhere to represent types
 enum Type {
-    // ... type variants ...
+    Int,
+    String,
 }
 
 

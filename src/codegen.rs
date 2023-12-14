@@ -6,7 +6,9 @@ pub struct CodeGenerator {
 
 impl CodeGenerator {
     pub fn new() -> Self {
-        // Initialize the code generator
+        CodeGenerator {
+            // No fields to initialize
+        }
     }
 
     pub fn generate(&self, ast: &AstNode) -> Result<String, String> {
