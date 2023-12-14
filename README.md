@@ -26,8 +26,6 @@ The idea of writing a compiler for CDX in CDX is thrilling and challenging. We'r
 ### 6. Validation and Optimization
 - Our goal is a compiler that not only adheres to CDX specifications but also excels in performance and robustness.
 
-## Getting Started with the Current Rust-based Compiler
-
 ## Getting Started
 
 ### Prerequisites
