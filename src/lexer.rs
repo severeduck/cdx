@@ -72,3 +72,16 @@ fn main() {
     }
 }
 
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_lexer_simple() {
+        let source = "function test() {}";
+        let lexer = Lexer::new(source.to_string());
+        let tokens = lexer.tokenize();
+        assert!(!tokens.is_empty(), "Lexer should produce tokens");
+    }
+}
